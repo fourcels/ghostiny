@@ -1,0 +1,22 @@
+{
+    "name": "ghostiny",
+    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+    "version": "0.1.0",
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "scripts": {
+        "start": "gulp"
+    },
+    "dependencies": {
+        "browser-sync": "^2.18.2",
+        "gulp": "^3.9.1",
+        "gulp-less": "^3.3.0"
+    }
+}

@@ -1,0 +1,9 @@
+.DS_STORE
+*~
+*.lock
+
+# log file
+*.log
+
+# Dependency directories
+node_modules
