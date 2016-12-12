@@ -2,10 +2,8 @@ var gulp         = require('gulp');
 var environments = require('gulp-environments');
 var less         = require('gulp-less');
 var sourcemaps   = require('gulp-sourcemaps');
-var rollup       = require('rollup-stream');
 var source       = require('vinyl-source-stream');
-var nodeResolve  = require('rollup-plugin-node-resolve');
-var commonjs     = require('rollup-plugin-commonjs');
+var rollup       = require('rollup-stream');
 var uglify       = require('rollup-plugin-uglify');
 var babel        = require('rollup-plugin-babel');
 var browserSync  = require('browser-sync').create();
@@ -18,7 +16,10 @@ gulp.task('browser-sync', ['less', 'js'], function() {
     browserSync.init({
       // ghost server
       proxy: "http://localhost:2368",
-
+      serveStatic: [{
+        route: '/assets',
+        dir: 'tmp'
+      }],
       port: 8088,
       ui: {
         port: 8089
@@ -45,7 +46,7 @@ gulp.task('less', () => {
     console.error('Error!', err.message);
   })
   .pipe(development(sourcemaps.write()))
-  .pipe(gulp.dest('./dist/css'))
+  .pipe(gulp.dest('./tmp/css'))
   .pipe(browserSync.reload({stream:true}));
 });
 
@@ -66,9 +67,8 @@ gulp.task('js', () => {
     ]
   })
   .pipe(source('main.js'))
-  .pipe(gulp.dest('./dist/js'))
+  .pipe(gulp.dest('./tmp/js'))
   .pipe(browserSync.reload({stream:true}));
-
 });
 
 gulp.task('build', ['less', 'js'])
