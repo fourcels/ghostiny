@@ -18,15 +18,14 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    <link rel="stylesheet" type="text/css" href="/dist/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/prism/9000.0.1/themes/prism.min.css" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 </head>
 <body class="{{body_class}} nav-closed">
-    {{log settings}} 123
     {{!-- The blog navigation links --}}
     {{navigation}}
 
@@ -44,14 +43,17 @@
     </div>
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script> -->
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
     {{!-- Fitvids makes video embeds responsive and awesome --}}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <!-- <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script> -->
     {{!-- The main JavaScript file for Casper --}}
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    <!-- <script type="text/javascript" src="{{asset "js/index.js"}}"></script> -->
+    <script type="text/javascript" src="//cdn.bootcss.com/prism/9000.0.1/prism.min.js"></script>
+    <script type="text/javascript" src="/dist/js/main.js"></script>
+
+
 
 </body>
 </html>
