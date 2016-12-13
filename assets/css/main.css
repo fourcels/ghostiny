@@ -1,1 +1,6 @@
-body div{background-color:#ff0}
+@import 'partials/reset.css';
+div {
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4ubGVzcyIsInBhcnRpYWxzL2luZGV4Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IlFBQVE7QUNBUjtFQUNFLHNCQUFBIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAncGFydGlhbHMvcmVzZXQuY3NzJztcbkBpbXBvcnQgJ3BhcnRpYWxzL2luZGV4Lmxlc3MnO1xuIiwiZGl2IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbn1cbiJdLCJmaWxlIjoibWFpbi5jc3MifQ== */
