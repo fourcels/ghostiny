@@ -1,3 +1,4 @@
+var path         = require('path');
 var gulp         = require('gulp');
 var environments = require('gulp-environments');
 var less         = require('gulp-less');
@@ -10,6 +11,7 @@ var browserSync  = require('browser-sync').create();
 var reload       = browserSync.reload;
 var development  = environments.development;
 var production   = environments.production;
+var assetsDir    = development() ? './tmp/' : './assets/';
 
 // Static server
 gulp.task('browser-sync', ['less', 'js'], function() {
@@ -46,7 +48,7 @@ gulp.task('less', () => {
     console.error('Error!', err.message);
   })
   .pipe(development(sourcemaps.write()))
-  .pipe(gulp.dest('./tmp/css'))
+  .pipe(gulp.dest(path.join(assetsDir, 'css')))
   .pipe(browserSync.reload({stream:true}));
 });
 
@@ -67,7 +69,7 @@ gulp.task('js', () => {
     ]
   })
   .pipe(source('main.js'))
-  .pipe(gulp.dest('./tmp/js'))
+  .pipe(gulp.dest(path.join(assetsDir, 'js')))
   .pipe(browserSync.reload({stream:true}));
 });
 
