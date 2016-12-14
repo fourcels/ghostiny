@@ -28,9 +28,9 @@ gulp.task('browser-sync', ['less'], function() {
 });
 
 gulp.task('watch-all', ['browser-sync'], () => {
-  gulp.watch("./assets/less/**", ['less']);
+  gulp.watch("./assets/less/**/*", ['less']);
   gulp.watch([
-    "./assets/js/**",
+    "./assets/js/**/*",
     "./*.hbs",
     "./partials/**/*.hbs"
   ]).on("change", reload);
@@ -43,9 +43,6 @@ gulp.task('less', () => {
   .pipe(less({
     compress: !development()
   }))
-  .on('error', function (err) {
-    console.error('Error!', err.message);
-  })
   .pipe(development(sourcemaps.write()))
   .pipe(production(rename({suffix: '.min'})))
   .pipe(gulp.dest('./assets/css/'))
