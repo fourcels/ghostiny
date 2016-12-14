@@ -3,7 +3,7 @@
 #.git/hooks/pre-push
 
 if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ] ; then
-  echo "Checking if src changed."
+  echo "Checking if assets/less changed."
   # precompile assets if any have been updated
   if git diff-index --name-only HEAD~1 | egrep '^assets/less' >/dev/null ; then
     echo "Precompiling build"
@@ -12,5 +12,7 @@ if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ] ; then
     git add -A assets/
     git commit -m "Updated assets for production"
     echo "Committed new assets"
+  else
+    echo "assets/less hasn't changed."
   fi
 fi
