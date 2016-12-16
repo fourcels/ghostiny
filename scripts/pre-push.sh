@@ -11,8 +11,10 @@ if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ] ; then
     echo "Builded production assets"
     git add -A assets/
     git commit -m "Updated assets for production"
-    echo "Committed new assets"
+    echo "Committed new assets, please push again"
+    exit 1
   else
     echo "assets/less hasn't changed."
+    exit 0
   fi
 fi
