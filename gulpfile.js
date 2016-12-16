@@ -28,12 +28,12 @@ gulp.task('browser-sync', ['less'], function() {
 });
 
 gulp.task('watch-all', ['browser-sync'], () => {
-  gulp.watch("./assets/less/**/*", ['less']);
+  gulp.watch("assets/less/**/*", {cwd: __dirname },  ['less']);
   gulp.watch([
-    "./assets/js/**/*",
-    "./*.hbs",
-    "./partials/**/*.hbs"
-  ]).on("change", reload);
+    "assets/js/**/*",
+    "*.hbs",
+    "partials/**/*.hbs"
+  ], {cwd: __dirname }).on("change", reload);
 })
 
 
