@@ -2,17 +2,48 @@
   text-transform: uppercase;
   text-align: center;
   &-list {
+    margin: 1em 0 0 0;
     padding: 0;
     list-style: none;
   }
+
   a {
     display: block;
+    padding: 0.2em 0.5em;
     color: #fff;
     text-decoration: none;
     transition: all 0.2s ease;
     &:hover {
       color: #3A4145;
       background-color: #fff;
+    }
+  }
+  &-current {
+    pointer-events: none;
+    position: relative;
+    &:after {
+      content: "";
+      height: 100%;
+      width: 2px;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #ff4081;
+    }
+  }
+  @media (max-width: @middleScreen) {
+    &-list {
+      margin: 0;
+    }
+    &-item {
+      display: inline-block;
+    }
+    &-current {
+      &:after {
+        height: 2px;
+        width: 100%;
+      }
     }
   }
 }

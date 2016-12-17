@@ -7,7 +7,10 @@
 {{#foreach posts}}
 <article class="{{post_class}}">
     <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+        <h2 class="post-title">
+          <a href="{{url}}">{{title}}</a>
+
+        </h2>
     </header>
     <section class="post-excerpt">
         <p>{{excerpt words="26"}} </p>
@@ -16,8 +19,8 @@
         </div>
     </section>
     <footer class="post-meta">
-        {{tags prefix=" on "}}
-        <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+      {{tags prefix=" on "}}
+      <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
     </footer>
 </article>
 {{/foreach}}

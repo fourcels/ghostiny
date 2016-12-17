@@ -63,10 +63,12 @@ h6 {
 a {
     color: #4A4A4A;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 a:hover {
     color: #111;
+    text-decoration: underline;
 }
 
 p, ul, ol, dl {
