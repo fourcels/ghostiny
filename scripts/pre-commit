@@ -10,8 +10,7 @@ if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ] ; then
     gulp build --env production
     echo "Builded production assets"
     git add -A assets/
-    git commit --amend -n
-    echo "Appended production assets"
+    echo "Added production assets"
   else
     echo "assets/less hasn't changed."
   fi
