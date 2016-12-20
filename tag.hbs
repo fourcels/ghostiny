@@ -2,10 +2,9 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- If we have a tag cover, display that - else blog cover - else nothing --}}
-<header class="main-header tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
+<header class="main-header tag-head">
     <div class="vertical">
         {{#tag}}
-        {{log this}}
         <div class="main-header-content inner">
             <h1 class="page-title">{{name}}</h1>
             <h2 class="page-description">
