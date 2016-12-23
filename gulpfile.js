@@ -43,10 +43,10 @@ gulp.task('less', () => {
   .pipe(less({
     compress: !development()
   }))
-  .pipe(development(sourcemaps.write()))
+  .pipe(development(sourcemaps.write('.')))
   .pipe(production(rename({suffix: '.min'})))
   .pipe(gulp.dest('./assets/css/'))
-  .pipe(browserSync.stream({match: '**/*.css'}));
+  .pipe(browserSync.stream());
 });
 
 
