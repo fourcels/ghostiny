@@ -400,10 +400,6 @@ button {
     background: #5ba4e5;
 }
 
-button[disabled] {
-  opacity: 0.6;
-}
-
 .container {
   height: 100%;
 }
@@ -731,14 +727,6 @@ body.page-template .post-title {
 .main-header {
   padding: 4rem 0 2rem;
   border-bottom: 1px solid #EBF2F6;
-}
-.disqus-load {
-  padding: 4rem 0;
-  text-align: center;
-}
-.disqus-load .btn {
-  font-size: 2.5rem;
-  line-height: 1.5;
 }
 .footer {
   padding: 20px 0;
