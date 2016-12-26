@@ -12,7 +12,8 @@ Develop with [less](http://lesscss.org/) and [browserSync](https://browsersync.i
 1. activate `ghostiny` theme
 
 # Developer Install
-1. cd $GHOSTIY_PATH
+1. `cd $GHOSTIY_PATH`
+1. `ln -s $PWD/scripts/pre-commit .git/hooks/pre-commit`
 1. `yarn` or `npm install`
 1. `gulp`
 1. open http://127.0.0.1:8088
