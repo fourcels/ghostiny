@@ -10,7 +10,7 @@ var development  = environments.development;
 var production   = environments.production;
 
 // Static server
-gulp.task('browser-sync', ['less'], function() {
+gulp.task('browser-sync', ['watch-all', 'less'], function() {
     browserSync.init({
       // ghost server
       proxy: "http://localhost:2368",
@@ -19,15 +19,12 @@ gulp.task('browser-sync', ['less'], function() {
         port: 8089
       },
       open: false,
-      watchOptions: {
-        // ignoreInitial: true,
-        ignored: '*.map'
-      }
+      online: false // faster broswer-sync startup
     });
 
 });
 
-gulp.task('watch-all', ['browser-sync'], () => {
+gulp.task('watch-all', () => {
   gulp.watch("assets/less/**/*", {cwd: __dirname },  ['less']);
   gulp.watch([
     "assets/js/**/*",
@@ -42,6 +39,9 @@ gulp.task('less', () => {
   .pipe(development(sourcemaps.init()))
   .pipe(less({
     compress: !development()
+  }).on('error', function(err){  // catch compile error
+    console.log(err.message);
+    this.emit('end');
   }))
   .pipe(development(sourcemaps.write('.')))
   .pipe(production(rename({suffix: '.min'})))
@@ -53,4 +53,4 @@ gulp.task('less', () => {
 gulp.task('build', ['less'])
 
 // or...
-gulp.task('default', ['watch-all']);
+gulp.task('default', ['browser-sync']);
