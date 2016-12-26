@@ -8,10 +8,9 @@ if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ] ; then
   if git diff-index --name-only HEAD | egrep '^assets/less' >/dev/null ; then
     echo "Precompiling less"
     gulp less --env production
-    echo "Builded production assets"
     git add -A assets/
     echo "Added production assets"
   else
-    echo "assets/less hasn't changed."
+    echo "Assets hasn't changed."
   fi
 fi
