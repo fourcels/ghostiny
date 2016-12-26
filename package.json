@@ -1,31 +1,27 @@
 {
     "name": "ghostiny",
-    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+    "description": "A personal blogging theme for Ghost.",
     "version": "0.1.0",
     "license": "MIT",
     "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
+        "desktop": "assets/screencapture-desktop.png",
+        "mobile": "assets/screencapture-mobile.png"
     },
     "keywords": [
         "ghost",
-        "theme"
+        "theme",
+        "less",
+        "broswerSync"
     ],
     "scripts": {
         "start": "gulp"
     },
     "dependencies": {
-        "babel-preset-es2015": "^6.18.0",
-        "babel-preset-stage-0": "^6.16.0",
         "browser-sync": "^2.18.2",
         "gulp": "^3.9.1",
         "gulp-environments": "^0.1.1",
         "gulp-less": "^3.3.0",
         "gulp-rename": "^1.2.2",
-        "gulp-sourcemaps": "^1.9.1",
-        "rollup-plugin-babel": "^2.6.1",
-        "rollup-plugin-uglify": "^1.0.1",
-        "rollup-stream": "^1.14.0",
-        "vinyl-source-stream": "^1.1.0"
+        "gulp-sourcemaps": "^1.9.1"
     }
 }
