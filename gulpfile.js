@@ -18,6 +18,8 @@ gulp.task('browser-sync', ['watch-all', 'less'], function() {
       ui: {
         port: 8089
       },
+      injectChanges: false,
+      notify: false,
       open: false,
       online: false // faster broswer-sync startup
     });
@@ -43,7 +45,7 @@ gulp.task('less', () => {
     console.log(err.message);
     this.emit('end');
   }))
-  .pipe(development(sourcemaps.write('.')))
+  .pipe(development(sourcemaps.write()))
   .pipe(production(rename({suffix: '.min'})))
   .pipe(gulp.dest('./assets/css/'))
   .pipe(browserSync.stream());
