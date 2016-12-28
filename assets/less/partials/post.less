@@ -3,7 +3,7 @@
     position: relative;
     margin: 4rem auto;
     padding-bottom: 4rem;
-    max-width: 700px;
+    max-width: @middleScreen;
     border-bottom: @borderColor 1px solid;
     word-wrap: break-word;
     &:after {
@@ -20,15 +20,6 @@
       border-radius: 100%;
       box-shadow: #FFF 0 0 0 5px;
     }
-}
-
-.post-header {
-  position: relative;
-  .post-meta {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
 }
 
 
@@ -172,8 +163,6 @@ body.page-template .post-title {
    with browser width % calculations and rounding */
 .post-template .content,
 .page-template .content {
-    margin: 0 -0.5em; // fix issue first letter hidden
-    padding: 0 0.5em;
     overflow: hidden;
 }
 

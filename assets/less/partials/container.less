@@ -1,7 +1,8 @@
 .container {
-  height: 100%;
   &-header {
-    float: left;
+    position: fixed;
+    left: 0;
+    top: 0;
     height: 100%;
     width: 300px;
     overflow: hidden;
@@ -10,20 +11,19 @@
 
 
   &-content {
+    margin-left: 300px;
     padding: 0 2em;
-    height: 100%;
-    overflow-y: auto;
   }
 
 
   @media (max-width: @middleScreen) {
     &-header {
-      float: none;
+      position: static;
       height: auto;
       width: auto;
     }
     &-content {
-      height: auto;
+      margin: auto;
     }
   }
 }
