@@ -10,7 +10,7 @@ var development  = environments.development;
 var production   = environments.production;
 
 // Static server
-gulp.task('browser-sync', ['watch-all', 'less'], function() {
+gulp.task('browser-sync', ['watch', 'less'], function() {
     browserSync.init({
       // ghost server
       proxy: "http://localhost:2368",
@@ -26,7 +26,7 @@ gulp.task('browser-sync', ['watch-all', 'less'], function() {
 
 });
 
-gulp.task('watch-all', () => {
+gulp.task('watch', () => {
   gulp.watch("assets/less/**/*", {cwd: __dirname },  ['less']);
   gulp.watch([
     "assets/js/**/*",
