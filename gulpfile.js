@@ -18,6 +18,14 @@ gulp.task('browser-sync', ['watch', 'less'], function() {
       ui: {
         port: 8089
       },
+      snippetOptions: { // fix turbolinks issue
+        rule: {
+          match: /<\/head>/i,
+          fn: function (snippet, match) {
+            return snippet + match;
+          }
+        }
+      },
       injectChanges: false,
       notify: false,
       open: false,
