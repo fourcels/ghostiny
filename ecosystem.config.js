@@ -35,7 +35,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "https://github.com/fourcels/ghostiny.git",
       path : "~/ghostiny",
-      "post-deploy" : "pm2 startOrReload ghost"
+      "post-deploy" : "pm2 reload ghost"
     }
   }
 }
