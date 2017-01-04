@@ -1,3 +1,11 @@
+var production =  {
+  user : "node",
+  host : "23.106.132.243",
+  ref  : "origin/master",
+  repo : "https://github.com/fourcels/ghostiny.git",
+  path : "~/ghostiny"
+}
+
 module.exports = {
   /**
    * Application configuration section
@@ -29,12 +37,9 @@ module.exports = {
    * http://pm2.keymetrics.io/docs/usage/deployment/
    */
   deploy : {
-    production : {
-      user : "node",
-      host : "23.106.132.243",
-      ref  : "origin/master",
-      repo : "https://github.com/fourcels/ghostiny.git",
-      path : "~/ghostiny",
+    "prod" : production,
+    "prod-reload" : {
+      ...production,
       "post-deploy" : "pm2 reload ghost"
     }
   }
