@@ -38,9 +38,5 @@ module.exports = {
    */
   deploy : {
     "prod" : production,
-    "prod-reload" : {
-      ...production,
-      "post-deploy" : "pm2 reload ghost"
-    }
   }
 }
