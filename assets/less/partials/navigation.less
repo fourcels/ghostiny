@@ -2,7 +2,6 @@
   text-transform: uppercase;
   text-align: center;
   &-list {
-    margin: 1em 0 0 0;
     padding: 0;
     list-style: none;
   }
@@ -10,13 +9,8 @@
   a {
     display: block;
     padding: 0.2em 0.5em;
-    color: #fff;
     text-decoration: none;
     transition: all 0.2s ease;
-    &:hover {
-      color: #3A4145;
-      background-color: #fff;
-    }
   }
   &-current {
     pointer-events: none;
@@ -33,9 +27,6 @@
     }
   }
   @media (max-width: @middleScreen) {
-    &-list {
-      margin: 0;
-    }
     &-item {
       display: inline-block;
     }

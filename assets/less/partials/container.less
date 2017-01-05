@@ -7,6 +7,17 @@
     width: 300px;
     overflow: hidden;
     background-color: #2e2e2e;
+    z-index: 1;
+  }
+
+  &-header-post {
+    height: 100px;
+    width: auto;
+    background-color: #fafafa;
+    border-bottom: 1px solid @borderColor;
+    overflow: hidden;
+    transition: height 0.2s;
+
   }
 
 
@@ -26,7 +37,17 @@
     &-content {
       margin: auto;
     }
+    &-header-post {
+      height: 60px;
+    }
   }
+}
+
+.post-template:not(.page) {
+  .container-content {
+    margin: auto;
+  }
+
 }
 
 .blog {
@@ -54,6 +75,17 @@
     }
   }
 
+
+  .nav-list {
+    margin: 1em 0 0 0;
+    a {
+      color: #fff;
+      &:hover {
+        color: #3A4145;
+        background-color: #fff;
+      }
+    }
+  }
   @media (max-width: @middleScreen) {
     & {
       padding: 1em;
@@ -62,6 +94,91 @@
       float: left;
       img {
         max-width: 80px;
+      }
+    }
+    .nav-list {
+      margin: 0;
+    }
+  }
+}
+
+.blog-post {
+  margin: auto;
+  max-width: @middleScreen;
+  height: 100%;
+  &-info {
+    float: left;
+    height: 100%;
+  }
+  &-logo {
+    float: left;
+    margin-right: 1em;
+    img {
+      display: block;
+      margin: 10px 0;
+      max-height: 80px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      transition: opacity .3s ease-in-out;
+      box-shadow: 0 0 20px 2px rgba(0,0,0,.3);
+    }
+  }
+  &-title {
+    float: left;
+    height: 100%;
+    vertical-align: middle;
+    h1 {
+      margin: 10px 0 0 0;
+      font-size: 3.5rem;
+    }
+  }
+  .nav {
+    float: right;
+    height: 100%;
+    &-list {
+      height: 100%;
+      margin: 0;
+    }
+    &-item {
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      @height: 100px;
+      display: block;
+      padding: 0 1.5rem;
+      height: @height;
+      line-height: @height;
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+
+  @media (max-width: @middleScreen) {
+    &-logo {
+      padding-left: 1.5rem;
+      img {
+        margin: 10px 0;
+        max-height: 40px;
+      }
+    }
+    &-title {
+      h1 {
+        margin-top: 1.5rem;
+        font-size: 2.5rem;
+      }
+    }
+    &-description {
+      display: none;
+    }
+
+    .nav {
+      a {
+        @height: 60px;
+        height: @height;
+        line-height: @height;
       }
     }
   }

@@ -26,17 +26,7 @@
 </head>
 <body class="{{body_class}}">
   <div class="container">
-    <header class="container-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-      <div class="container-header-content blog">
-        <div class="blog-info">
-          {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-          <h1 class="blog-title">{{@blog.title}}</h1>
-          <div class="blog-description">{{@blog.description}}</div>
-        </div>
-        {{!-- The blog navigation links --}}
-        {{navigation}}
-      </div>
-    </header>
+    {{> header}}
 
     <div class="container-content">
       {{{body}}}

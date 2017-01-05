@@ -1,0 +1,35 @@
+{{^is 'post'}}
+  <header class="container-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="container-header-content blog">
+      <div class="blog-info">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        <h1 class="blog-title">
+          <a href="{{@blog.url}}">
+          {{@blog.title}}
+          </a>
+        </h1>
+        <div class="blog-description">{{@blog.description}}</div>
+      </div>
+      {{!-- The blog navigation links --}}
+      {{navigation}}
+    </div>
+  </header>
+{{else}}
+  <header class="container-header-post">
+    <div class="blog-post">
+      <div class="blog-post-info">
+        {{#if @blog.logo}}<a class="blog-post-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+        <div class="blog-post-title">
+          <h1>
+            <a href="{{@blog.url}}">
+            {{@blog.title}}
+            </a>
+          </h1>
+          <div class="blog-post-description">{{@blog.description}}</div>
+        </div>
+      </div>
+      {{!-- The blog navigation links --}}
+      {{navigation}}
+    </div>
+  </header>
+{{/is}}
