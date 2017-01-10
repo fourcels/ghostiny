@@ -21,5 +21,18 @@
 
     </article>
 </main>
+{{!-- Links to Previous/Next posts --}}
+<div class="read-next">
+  {{#next_post}}
+  <a class="read-next-next" href="{{url}}">
+    {{title}}
+  </a>
+  {{/next_post}}
+  {{#prev_post}}
+  <a class="read-next-prev" href="{{url}}">
+    {{title}}
+  </a>
+  {{/prev_post}}
+</div>
 
 {{/post}}

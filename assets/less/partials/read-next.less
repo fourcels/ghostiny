@@ -1,0 +1,20 @@
+
+.read-next {
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: @middleScreen;
+  border-top: 1px solid @borderColor;
+  overflow: hidden;
+  &-next {
+    float: left;
+    &::before {
+      content: "«";
+    }
+  }
+  &-prev {
+    float: right;
+    &::after {
+      content: "»";
+    }
+  }
+}
