@@ -1,10 +1,12 @@
 
 .read-next {
   margin: 0 auto;
-  padding: 20px 0;
   max-width: @middleScreen;
   border-top: 1px solid @borderColor;
   overflow: hidden;
+  &-next, &-prev {
+    padding: 10px 0;
+  }
   &-next {
     float: left;
     &::before {
@@ -15,6 +17,13 @@
     float: right;
     &::after {
       content: "»";
+    }
+  }
+  @media (max-width: @smallScreen) {
+    &-next, &-prev {
+      float: none;
+      display: block;
+      text-align: center;
     }
   }
 }
