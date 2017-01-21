@@ -10,31 +10,7 @@ document.addEventListener("turbolinks:load", function() {
 })
 
 
-function throttle(fn, delay, mustRunDelay) {
-  var delay = delay || 200;
-  var mustRunDelay = mustRunDelay || 1000;
-  var timer = null;
-  var tStart;
-  return function() {
-    var _this = this,
-        args = arguments,
-        tCurr = +new Date();
-    clearTimeout(timer);
-    if (!tStart) {
-      tStart = tCurr;
-    }
-    if (tCurr - tStart >= mustRunDelay) {
-      fn.apply(_this, args);
-      tStart = tCurr;
-    } else {
-      timer = setTimeout(function() {
-        fn.apply(_this, args);
-      }, delay);
-    }
-  }
-}
-
-window.addEventListener('scroll', throttle(function(e) {
+window.addEventListener('scroll', _.debounce(function(e) {
   var headerPost = document.getElementById('header-post')
   if (headerPost) {
     var scrollY = window.scrollY;
@@ -44,4 +20,4 @@ window.addEventListener('scroll', throttle(function(e) {
       headerPost.classList.remove('header-fixed')
     }
   }
-}));
+}, 200));
