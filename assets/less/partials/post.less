@@ -144,6 +144,7 @@ body.page-template .post-title {
 .post-template .post-title,
 .page-template .post-title {
     margin-bottom: 0;
+    text-transform: capitalize;
 }
 
 .post-template .post-meta,
@@ -196,7 +197,12 @@ body.page-template .post-title {
     -ms-transform: translateX(-50%); /* for IE9 */
     transform: translateX(-50%);
 }
-
+.post-content a {
+  color: #5ba4e5;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 .main-header {
   padding: 4rem 0 2rem;
   border-bottom: 1px solid @borderColor;
